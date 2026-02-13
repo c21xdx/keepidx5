@@ -7,9 +7,11 @@
 Firebase Studio 的 workspace 长时间不活跃会自动休眠。本项目通过容器定期访问 workspace 页面来保持活跃。
 
 - 使用 Firefox 浏览器访问 workspace
-- 每个 workspace 停留 4-5 分钟后关闭
+- Firefox 保持运行，通过 xdotool 控制 tab 打开/关闭
+- 每个 workspace 停留 4-5 分钟后关闭 tab
 - 间隔 15-50 秒后访问下一个
 - 约 30 分钟完成一轮，每个 workspace 每小时刷新 2 次
+- 登录成功后自动检测 cookies 并开始保活
 - 通过 noVNC 提供 Web 界面，用于首次 Google 登录
 - 支持 SOCKS5 代理
 
@@ -68,8 +70,7 @@ docker run -d \
 1. 浏览器访问 `http://<服务器IP>:6080/vnc.html`
 2. 点击「Connect」连接到虚拟桌面
 3. 在 Firefox 中完成 Google 账号登录
-4. 登录成功后，关闭 Firefox 窗口
-5. 保活脚本将自动启动
+4. 登录成功后，脚本自动检测并开始保活（无需手动操作）
 
 ### 4. 查看日志
 

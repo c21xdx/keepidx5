@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
     x11vnc \
     novnc \
     websockify \
+    xdotool \
     procps \
     fonts-wqy-zenhei \
     fonts-noto-color-emoji \
